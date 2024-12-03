@@ -25,6 +25,7 @@ public class Evento {
     private String descrizione;
 
     @Column(name = "tipo_evento", nullable = false)
+    @Enumerated(EnumType.STRING)
     private EventoEnum tipoEvento;
 
 
