@@ -11,12 +11,10 @@ public class PersonaDAO {
 
     public PersonaDAO(EntityManager em) {
         this.em = em;
-
     }
 
-
     public void insertPersona(Persona persona) {
-        em.getTransaction().begin(); //
+        em.getTransaction().begin();
         em.persist(persona);
         em.getTransaction().commit();
     }
@@ -32,24 +30,22 @@ public class PersonaDAO {
     }
 
     public void updatePersona(Long id, Persona persona) {
-        Persona pReale = findPersonaById(id);
-        pReale.setNome(persona.getNome());
-        pReale.setCognome(persona.getCognome());
-        pReale.setEmail(persona.getEmail());
-        pReale.setDataDiNascita(persona.getDataDiNascita());
-        pReale.setListaPartecipazioni(persona.getListaPartecipazioni());
-        pReale.setSesso(persona.getSesso());
-
+        Persona peReale = findPersonaById(id);
+        peReale.setNome(persona.getNome());
+        peReale.setCognome(persona.getCognome());
+        peReale.setDataDiNascita(persona.getDataDiNascita());
+        peReale.setListaPartecipazioni(persona.getListaPartecipazioni());
+        peReale.setSesso(persona.getSesso());
 
         em.getTransaction().begin();
-        em.merge(pReale);
+        em.merge(peReale);
         em.getTransaction().commit();
     }
 
     public void deletePersona(Long id) {
-        Persona pReale = findPersonaById(id);
+        Persona peReale = findPersonaById(id);
         em.getTransaction().begin();
-        em.remove(pReale);
+        em.remove(peReale);
         em.getTransaction().commit();
     }
 
@@ -61,8 +57,8 @@ public class PersonaDAO {
 
     public void insertAll(List<Persona> lista) {
         em.getTransaction().begin();
-        for (Persona c : lista) {
-            em.persist(c);
+        for (Persona e : lista) {
+            em.persist(e);
         }
         em.getTransaction().commit();
     }

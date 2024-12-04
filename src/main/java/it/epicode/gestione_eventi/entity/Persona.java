@@ -3,13 +3,14 @@ package it.epicode.gestione_eventi.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.List;
 
 @Data
 @Entity
-@Table(name = "eventi")
+@Table(name = "persone")
 public class Persona {
 
     @Id
@@ -26,13 +27,11 @@ public class Persona {
     private String email;
 
     @Column(name = "data_di_nascita", nullable = false)
-    private Date dataDiNascita;
+    private LocalDate dataDiNascita;
 
-
-    @Column(name = "sesso", nullable = false)
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private EventoEnum sesso;
-
+    private SessoEnum sesso;
 
     @OneToMany(mappedBy = "persona")
     private List<Partecipazione> listaPartecipazioni = new ArrayList<>();

@@ -11,12 +11,10 @@ public class LocationDAO {
 
     public LocationDAO(EntityManager em) {
         this.em = em;
-
     }
 
-
     public void insertLocation(Location location) {
-        em.getTransaction().begin(); //
+        em.getTransaction().begin();
         em.persist(location);
         em.getTransaction().commit();
     }
@@ -57,8 +55,8 @@ public class LocationDAO {
 
     public void insertAll(List<Location> lista) {
         em.getTransaction().begin();
-        for (Location c : lista) {
-            em.persist(c);
+        for (Location e : lista) {
+            em.persist(e);
         }
         em.getTransaction().commit();
     }

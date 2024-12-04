@@ -20,18 +20,16 @@ public class Evento {
     @Column(nullable = false)
     private String titolo;
 
-    @Column(name = "data:evento", nullable = false)
-    private Date dataEvento;
+    @Column(name = "data_evento", nullable = false)
+    private LocalDate dataEvento;
 
     @Column(nullable = false)
     private String descrizione;
 
     @Column(name = "tipo_evento", nullable = false)
-    @Enumerated(EnumType.STRING)
     private EventoEnum tipoEvento;
 
-
-    @Column(name = "max_partecipanti", nullable = false)
+    @Column(name = "partecipanti_max", nullable = false)
     private int numeroMassimoPartecipanti;
 
     @OneToOne

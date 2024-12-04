@@ -10,8 +10,6 @@ public class Partecipazione {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-
-
     private Long id;
 
     @Column(nullable = false)

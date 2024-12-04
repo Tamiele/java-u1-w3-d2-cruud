@@ -6,12 +6,11 @@ import lombok.*;
 
 @Data
 @Entity
-@Table(name = "locations")
+@Table(name = "location")
 public class Location {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-
     private Long id;
 
     @Column(nullable = false)
