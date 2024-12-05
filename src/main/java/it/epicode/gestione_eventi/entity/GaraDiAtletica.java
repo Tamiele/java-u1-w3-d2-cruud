@@ -18,7 +18,8 @@ public class GaraDiAtletica extends Evento {
     @OneToMany(mappedBy = "garaDiAtletica")
     private Set<Persona> atleti = new HashSet<>();
 
-    @OneToOne
+    //piu gare posso essere vinte da una sola persona
+    @ManyToOne
     @JoinColumn(name = "persona_id")
     private Persona vincitore;
 

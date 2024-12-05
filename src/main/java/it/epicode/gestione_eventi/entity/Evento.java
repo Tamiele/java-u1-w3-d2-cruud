@@ -32,7 +32,9 @@ public class Evento {
     @Column(name = "partecipanti_max", nullable = false)
     private int numeroMassimoPartecipanti;
 
-    @OneToOne
+
+    //tanti eventi possono avere la stessa location
+    @ManyToOne
     @JoinColumn(name = "location_id")
     private Location location;
 
