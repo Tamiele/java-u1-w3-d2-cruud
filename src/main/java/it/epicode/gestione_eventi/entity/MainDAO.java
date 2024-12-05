@@ -31,7 +31,7 @@ public class MainDAO {
         persona.setEmail("andreafocoso@gmail.com");
         persona.setDataDiNascita(LocalDate.of(2003, 01, 15));
         persona.setSesso(SessoEnum.M);
-//        persona.setListaPartecipazioni();
+
 
         personaDAO.insertPersona(persona);
 
